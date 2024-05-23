@@ -1,10 +1,13 @@
 <?php
 
-function example()
-{
-    echo 'Exemple called';
+declare(strict_types=1);
 
-    return true;
+function isLeap(int $year): bool
+{
+    if($year % 4 == 0 || ($year % 100 != 0 && $year % 400 == 0)){
+        return true;
+    }
+    return false;
 }
 
-var_dump(false && example());
+var_dump(isLeap(1996));
