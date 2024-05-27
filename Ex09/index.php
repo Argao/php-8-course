@@ -1,25 +1,12 @@
 <?php 
-//Callable type
+//Pass by reference / pointers
+$cup = 'empty';
 
-$multiplier = 2;
-
-
-// $multiply = function ($num) use ($multiplier){
-
-
-//     return $num * $multiplier;
-// };
-
-
-
-function anotherMultiplier($num){
-    return $num * 2;
+function fill(&$cup){
+    $cup = 'full';
 }
 
 
-function sum (int|float $a, int|float $b, callable $callback){
-    return $callback($a + $b);
-}
+fill($cup);
 
-echo sum(5, 2, fn ($num) => $num * $multiplier);
-echo sum(5, 2, 'anotherMultiplier');
+echo $cup;
