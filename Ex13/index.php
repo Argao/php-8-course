@@ -11,10 +11,10 @@ spl_autoload_register(function($class){
     require_once $path;
 });
 
-use App\{Account, SocialMedia};
+use App\{Account, SocialMedia, Utility};
 
 $myAccount = new Account('João', 20);
 
 $myAccount?->deposit(50)->deposit(30);
 
-var_dump($myAccount);
+Utility::printArr([34,43,5]);
