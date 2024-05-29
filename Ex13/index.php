@@ -11,12 +11,30 @@ spl_autoload_register(function($class){
     require_once $path;
 });
 
-use App\{Account, SocialMedia, Utility,ToasterPremium};
+use App\{Account, SocialMedia, Utility,ToasterPremium,Restaurant1,RestaurantTwo,FoodApp,EmptyArrayException};
 
-$myAccount = new Account('João', 20);
+//$myAccount = new Account('João', 20);
+//
+//
+//$myToaster = new ToasterPremium();
+
+//$myToaster->toast();
+
+//
+//$restaurant = new FoodApp(new RestaurantTwo());
 
 
-$myToaster = new ToasterPremium();
+try {
+    Utility::printArr([]);
+}catch (EmptyArrayException $e){
+    echo "Custom exception: {$e->getMessage()} </br>";
+}catch (Exception $e){
+    echo "Generic exception: {$e->getMessage()} </br>";
+} finally {
+    echo "Finally block </br>";
+}
 
-$myToaster->toast();
 
+
+
+echo "Finished running script";
