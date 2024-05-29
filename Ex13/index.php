@@ -11,10 +11,12 @@ spl_autoload_register(function($class){
     require_once $path;
 });
 
-use App\{Account, SocialMedia, Utility};
+use App\{Account, SocialMedia, Utility,ToasterPremium};
 
 $myAccount = new Account('João', 20);
 
-$myAccount?->deposit(50)->deposit(30);
 
-Utility::printArr([34,43,5]);
+$myToaster = new ToasterPremium();
+
+$myToaster->toast();
+
